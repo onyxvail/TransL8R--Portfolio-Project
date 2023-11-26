@@ -1,0 +1,24 @@
+<!-- translator/templates/translator/translate.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator</title>
+</head>
+<body>
+    <h1>Text Translator</h1>
+    <form method="post" action="{% url 'translate_text' %}">
+        {% csrf_token %}
+        <label for="original_text">Enter Text:</label>
+        <textarea name="original_text" rows="4" cols="50"></textarea><br>
+        <button type="submit">Translate</button>
+    </form>
+    {% if original_text %}
+        <p>Original Text: {{ original_text }}</p>
+        <p>Translated Text: {{ translated_text }}</p>
+    {% endif %}
+</body>
+</html>
