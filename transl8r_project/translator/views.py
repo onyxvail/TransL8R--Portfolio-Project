@@ -17,3 +17,8 @@ def translate(request):
         return JsonResponse({'translation': translation})
 
     return render(request, 'translate.html')
+def signup(request):
+    return render(request, 'registration/signup.html')
+
+def login(request):
+    return render(request, 'account/login.html')

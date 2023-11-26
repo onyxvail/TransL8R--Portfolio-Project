@@ -12,5 +12,7 @@ urlpatterns = [
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', include('translator.urls')),  # Include translator app URLs
+    path('', include('translator.urls')),
+    path('signup/', signup, name='signup'),
+    path('login/', login, name='login'),
 ]
