@@ -1,22 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ... (existing meta tags) ... -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-btVzqB+Kl+ddiIoKPFrAhdK9+txLXD5K1UjwfgxEv1jpjfuSH2PXPnBCB7FjNE9s" crossorigin="anonymous">
-    <title>Home</title>
+  <title>TransL8r</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("assets/background.jpg");
+      background-repeat: no-repeat;
+    }
+
+    /* Adjust padding for the navbar */
+    .navbar {
+      padding: 1.5rem;
+    }
+
+    /* Adjust padding for the navbar links */
+    .navbar-item {
+      padding: 1rem;
+    }
+    /* Adjust margin for the team section */
+    #team {
+      margin-top: 3rem;
+    }
+
+    /* Adjust padding for the contact form */
+    #contact {
+      padding: 3rem 16px;
+    }
+
+    .navbar-brand {
+    background-image: url(assets/TransL8R\ logo.png);
+    background-position: center;
+    background-size: 30vh;
+    width:95px;
+    height: 85px;
+    background-clip: unset;
+    }
+  </style>
 </head>
-<!-- ... (body and other content) ... -->
-<body class="bg-light">
-    <div class="container mt-5">
-        <div class="text-center">
-            <h1 class="display-4">TransL8r: The polyglot's Babel Fish</h1>
-            <p class="lead">Breaking the code of Global communication</p>
-        </div>
+<body>
+
+<!-- Navbar (sit on top) -->
+<nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar" onclick="toggleNavbar()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <!-- Right-sided navbar links -->
+  <div id="myNavbar" class="navbar-menu">
+    <div class="navbar-end">
+      <a href="#about" class="navbar-item">ABOUT</a>
+      <a href="#team" class="navbar-item"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#work" class="navbar-item"><i class="fa fa-th"></i> Translate</a>
+      <a href="#contact" class="navbar-item"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
+  </div>
+</nav>
 
-    <!-- Your existing content goes here -->
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation" style="display: none;" id="mySidebar">
+  <div class="navbar-end">
+    <a href="javascript:void(0)" onclick="toggleNavbar()" class="navbar-item is-large">Close ×</a>
+    <a href="#about" onclick="toggleNavbar()" class="navbar-item">ABOUT</a>
+    <a href="#team" onclick="toggleNavbar()" class="navbar-item">TEAM</a>
+    <a href="#translate" onclick="toggleNavbar()" class="navbar-item">Translate</a>
+    <a href="#contact" onclick="toggleNavbar()" class="navbar-item">CONTACT</a>
+  </div>
+</nav>
 
-    <!-- Bootstrap JS (optional, for certain components) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-btVzqB+Kl+ddiIoKPFrAhdK9+txLXD5K1UjwfgxEv1jpjfuSH2PXPnBCB7FjNE9s" crossorigin="anonymous"></script>
+<!-- Header with full-height image -->
+<header class="hero is-fullheight-with-navbar is-primary is-bold" style="background-image: url(assets/gg.png)";>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 is-size-3-mobile has-text-white">TransL8R : The Polyglot's Babel Fish.</h1>
+      <h2 class="subtitle is-3 is-size-5-mobile has-text-white">Breaking the code of global communication.</h2>
+      <a href="#about" class="button is-white is-rounded is-large has-text-black">Learn more .</a>
+    </div>
+  </div>
+</header>
+<!-- About Section -->
+<section class="section">
+  <div class="container">
+    <h3 class="title is-3 has-text-centered">ABOUT TransL8R</h3>
+    <p class="subtitle is-5 has-text-centered">The story behind the name</p>
+    <div class="columns is-centered">
+      <div class="column is-one-quarter">
+        <i class="fa fa-desktop is-size-1 has-text-centered"></i>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Team Section -->
+<section class="section" id="team">
+  <div class="container">
+    <h3 class="title is-3 has-text-centered">THE TEAM</h3>
+    <p class="subtitle is-5 has-text-centered">The sole developer</p>
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="assets/onyx.jpg" alt="Ons Hafi">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h3 class="title is-4">Ons Hafi</h3>
+              <p class="subtitle is-6">F/end & B/end</p>
+              <p>avadacadavra</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section is-light" id="contact">
+  <div class="container">
+    <h3 class="title is-3 has-text-centered">CONTACT</h3>
+    <p class="subtitle is-5 has-text-centered">Let's get in touch. Send us a message:</p>
+    <div class="columns is-centered is-flex is-justify-content-center">
+      <div class="column is-half">
+        <form action="/action_page.php" target="_blank">
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Name" required name="Name">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Subject</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Subject" required name="Subject">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Message" required name="Message"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-black" type="submit">
+                <i class="fa fa-paper-plane"></i> SEND MESSAGE
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</section>
+  </div>
+</section>
+
+
+<script>
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  function toggleNavbar() {
+    var navbarBurger = document.querySelector('.navbar-burger');
+    var navbarMenu = document.querySelector('.navbar-menu');
+    navbarBurger.classList.toggle('is-active');
+    navbarMenu.classList.toggle('is-active');
+  }
+</script>
+
 </body>
 </html>

@@ -1,24 +1,214 @@
-<!-- translator/templates/translator/translate.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Translator</title>
+  <title>TransL8r</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2354de85-255e-49a8-8a40-bcf29979c5a8/d9ks00d-3a8d4024-6342-4a83-89b2-37763b2f2353.png/v1/fill/w_1024,h_634,q_80,strp/lights_of_hope_by_kumamask_d9ks00d-fullview.jpg?token=..."); /* Keep the image URL */
+      min-height: 100vh; /* Updated to use viewport height */
+    }
+
+    /* Adjust padding for the navbar */
+    .navbar {
+      padding: 1.5rem;
+    }
+
+    /* Adjust padding for the navbar links */
+    .navbar-item {
+      padding: 1rem;
+    }
+
+    /* Adjust margin for the team section */
+    #team {
+      margin-top: 3rem;
+    }
+
+    /* Adjust padding for the contact form */
+    #contact {
+      padding: 3rem 16px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Text Translator</h1>
-    <form method="post" action="{% url 'translate_text' %}">
-        {% csrf_token %}
-        <label for="original_text">Enter Text:</label>
-        <textarea name="original_text" rows="4" cols="50"></textarea><br>
-        <button type="submit">Translate</button>
-    </form>
-    {% if original_text %}
-        <p>Original Text: {{ original_text }}</p>
-        <p>Translated Text: {{ translated_text }}</p>
-    {% endif %}
+
+<!-- Navbar (sit on top) -->
+<nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#home">
+      TransL8R
+    </a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar" onclick="toggleNavbar()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <!-- Right-sided navbar links -->
+  <div id="myNavbar" class="navbar-menu">
+    <div class="navbar-end">
+      <a href="#about" class="navbar-item">ABOUT</a>
+      <a href="#team" class="navbar-item"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#work" class="navbar-item"><i class="fa fa-th"></i> Translate</a>
+      <a href="#contact" class="navbar-item"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation" style="display: none;" id="mySidebar">
+  <div class="navbar-end">
+    <a href="javascript:void(0)" onclick="toggleNavbar()" class="navbar-item is-large">Close ×</a>
+    <a href="#about" onclick="toggleNavbar()" class="navbar-item">ABOUT</a>
+    <a href="#team" onclick="toggleNavbar()" class="navbar-item">TEAM</a>
+    <a href="#translate" onclick="toggleNavbar()" class="navbar-item">Translate</a>
+    <a href="#contact" onclick="toggleNavbar()" class="navbar-item">CONTACT</a>
+  </div>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 hero is-fullheight-with-navbar is-primary">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 is-size-3-mobile has-text-white">TransL8R : The Polyglot's Babel fish.</h1>
+      <h2 class="subtitle is-3 is-size-5-mobile has-text-white">Breaking the code of Global communication.</h2>
+      <a href="#about" class="button is-white is-rounded is-large has-text-black">Translate</a>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <div class="container">
+      <div class="content has-text-grey has-text-centered">
+        <i class="fa fa-facebook-official"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-snapchat"></i>
+        <i class="fa fa-pinterest-p"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-linkedin"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- About Section -->
+<section class="section">
+  <div class="container">
+    <h3 class="title is-3 has-text-centered">ABOUT TransL8R</h3>
+    <p class="subtitle is-5 has-text-centered">The story behind the name</p>
+    <div class="columns is-centered">
+      <div class="column is-one-quarter">
+        <i class="fa fa-desktop is-size-1 has-text-centered"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="section" id="team">
+  <div class="container">
+    <h3 class="title is-3 has-text-centered">THE TEAM</h3>
+    <p class="subtitle is-5 has-text-centered">The sole developer</p>
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="assets/onyx.jpg" alt="Ons Hafi">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h3 class="title is-4">Ons Hafi</h3>
+              <p class="subtitle is-6">F/end & B/end</p>
+              <p>avadacadavra</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section is-light" id="contact">
+  <div class="container">
+    <h3 class="title is-3 has-text-centered">CONTACT</h3>
+    <p class="subtitle is-5 has-text-centered">Let's get in touch. Send us a message:</p>
+    <div class="columns is-centered is-flex is-justify-content-center">
+      <div class="column is-half">
+        <form action="/action_page.php" target="_blank">
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Name" required name="Name">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Subject</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Subject" required name="Subject">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Message" required name="Message"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-black" type="submit">
+                <i class="fa fa-paper-plane"></i> SEND MESSAGE
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Image of location/map -->
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fd3a8fb7-5eef-4ae8-857d-977ef347f1e3/ddk7ah4-030d82a9-f723-4cb0-b69e-eeee43d6f16a.jpg/v1/fill/w_1192,h_670,q_70,strp/miracles_of_thousand_worlds_by_era7_ddk7ah4-pre.jpg?token=..." style="width:100%; margin-top: 2rem;">
+  </div>
+</section>
+
+    <!-- Image of location/map -->
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fd3a8fb7-5eef-4ae8-857d-977ef347f1e3/ddk7ah4-030d82a9-f723-4cb0-b69e-eeee43d6f16a.jpg/v1/fill/w_1192,h_670,q_70,strp/miracles_of_thousand_worlds_by_era7_ddk7ah4-pre.jpg?token=..." style="width:100%; margin-top: 2rem;">
+  </div>
+</section>
+
+
+<script>
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  function toggleNavbar() {
+    var navbarBurger = document.querySelector('.navbar-burger');
+    var navbarMenu = document.querySelector('.navbar-menu');
+    navbarBurger.classList.toggle('is-active');
+    navbarMenu.classList.toggle('is-active');
+  }
+</script>
+
 </body>
 </html>
