@@ -70,7 +70,7 @@
   <div id="myNavbar" class="navbar-menu">
     <div class="navbar-end  has-shadow" >
       <a href="#team" class="navbar-item" style="color: #22092C;"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#work" class="navbar-item" style="color: #22092C;"><i class=" fa-language" style="color: #22092C;"></i></i> Translate</a>
+      <a href="#translate" class="navbar-item" style="color: #22092C;"><i class="fa fa-language" style="color: #22092C;"></i> Translate</a>
       <a href="#contact" class="navbar-item" style="color: #22092C;"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
   </div>
@@ -96,12 +96,12 @@
       <h2 class="subtitle is-3 is-size-5-mobile" style="color: #22092C;">
         Breaking the code of global communication.
       </h2>
-      <a href="#about" class="button  is-hovered is-light is-rounded is-large" style="color: #22092C;">Learn more .</a>
+      <a href="#about" class="button is-hovered is-light is-rounded is-large" style="color: #22092C;">Learn more</a>
     </div>
   </div>
 </header>
 <!-- About Section -->
-<section class="section">
+<section class="section" id="about">
   <div class="container">
     <h3 class="title is-3 has-text-centered">ABOUT TransL8R</h3>
     <p class="subtitle is-5 has-text-centered">The story behind the name</p>
@@ -112,6 +112,90 @@
     </div>
   </div>
 </section>
+<!-- Translate Section -->
+<section class="#translate" id="translate">
+  <div class="container">
+    <div class="columns is-centered is-vcentered">
+      <div class="column is-4">
+        <h1 class="title">Translate</h1>
+
+        <form id="translationForm">
+          <div class="field">
+            <label class="label">Source Language</label>
+            <select class="input" id="sourceLanguage">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="label">Target Language</label>
+            <select class="input" id="targetLanguage">
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="label">Input Text</label>
+            <textarea class="textarea" id="inputText" placeholder="Enter text to translate"></textarea>
+          </div>
+
+          <div class="field">
+            <label class="label">Translated Text</label>
+            <textarea class="textarea" id="translatedText" placeholder="Translation result"></textarea>
+          </div>
+
+          <button class="button is-primary" type="submit">Translate</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const translationForm = document.getElementById('translationForm');
+  const sourceLanguage = document.getElementById('sourceLanguage');
+  const targetLanguage = document.getElementById('targetLanguage');
+  const inputText = document.getElementById('inputText');
+  const translatedText = document.getElementById('translatedText');
+
+  translationForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const inputTextValue = inputText.value.trim();
+    if (!inputTextValue) return;
+
+    const translationAPIURL = `https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY`; // I need API key
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        q: inputTextValue,
+        source: sourceLanguage.value,
+        target: targetLanguage.value,
+        format: 'text'
+      })
+    };
+
+    fetch(translationAPIURL, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        const translatedTextValue = data.data.translations[0].translatedText;
+        translatedText.value = translatedTextValue;
+      })
+      .catch(error => {
+        console.error('Translation error:', error);
+      });
+  });
+</script>
+
+
 <!-- Team Section -->
 <section class="section" id="team">
   <div class="container">
