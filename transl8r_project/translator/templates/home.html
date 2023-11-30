@@ -52,6 +52,35 @@
     height: 85px;
     background-clip: unset;
     }
+
+    .learn-more-button::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.learn-more-button:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.learn-more-button::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(200 100% 80%);
+  z-index: -1;
+  transition: transform .3s ease;
+}
+
+.learn-more-button {
+  position: relative;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+
   </style>
 </head>
 <body>
@@ -70,7 +99,7 @@
   <div id="myNavbar" class="navbar-menu">
     <div class="navbar-end  has-shadow" >
       <a href="#team" class="navbar-item" style="color: #22092C;"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#translate" class="navbar-item" style="color: #22092C;"><i class="fa fa-language" style="color: #22092C;"></i> Translate</a>
+      <a href="#translate" class="navbar-item" style="color: #22092C;"><i class="fa fa-language" style="color: #22092C;"></i> TRANSLATE</a>
       <a href="#contact" class="navbar-item" style="color: #22092C;"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
   </div>
@@ -81,7 +110,7 @@
   <div class="navbar-end has-shadow">
     <a href="javascript:void(0)" onclick="toggleNavbar()" class="navbar-item is-large">Close ×</a>
     <a href="#team" onclick="toggleNavbar()" class="navbar-item">TEAM</a>
-    <a href="#translate" onclick="toggleNavbar()" class="navbar-item">Translate</a>
+    <a href="#translate" onclick="toggleNavbar()" class="navbar-item">TRANSLATE</a>
     <a href="#contact" onclick="toggleNavbar()" class="navbar-item">CONTACT</a>
   </div>
 </nav>
@@ -96,28 +125,36 @@
       <h2 class="subtitle is-3 is-size-5-mobile" style="color: #22092C;">
         Breaking the code of global communication.
       </h2>
-      <a href="#about" class="button is-hovered is-light is-rounded is-large" style="color: #22092C;">Learn more</a>
+      <a href="#about" class="button is-hovered is-light is-rounded is-large learn-more-button" style="color: #22092C;">Learn more</a>
+
     </div>
   </div>
 </header>
 <!-- About Section -->
 <section class="section" id="about">
   <div class="container">
-    <h3 class="title is-3 has-text-centered">ABOUT TransL8R</h3>
-    <p class="subtitle is-5 has-text-centered">The story behind the name</p>
+    <h3 class="title is-3 has-text-centered">About TransL8R :</h3>
+    <h1>               </h1>
+    <h2 class="subtitle is-5 has-text-centered mb-5">The story behind the name</h2>
+
+    <!-- Story Paragraph -->
     <div class="columns is-centered">
-      <div class="column is-one-quarter">
-        <i class="fa fa-desktop is-size-1 has-text-centered"></i>
+      <div class="column is-half">
+        <i class="fa fa-book is-size-1 has-text-centered"></i>
+        <p class="has-text-centered mt-4">
+          Embracing the whimsical charm of Douglas Adams' "The Hitchhiker's Guide to the Galaxy," TransL8R proudly adopts the title of the polyglot's Babel Fish. In this delightful nod to the literary realm, TransL8R transforms the mundane act of translation into a nerdy and playful adventure. The Babel Fish, a fictional creature from Adams' masterpiece, possesses the extraordinary ability to instantly translate any language in the universe. Similarly, TransL8R, with its witty play on words, becomes the go-to linguistic companion for users navigating the diverse expanse of languages. The inclusion of this nerdy touch on the website not only pays homage to a beloved sci-fi classic but also adds a delightful twist to the serious business of language translation. It's a nerdy badge of honor, inviting users to embark on a linguistic journey with a touch of literary flair.
+        </p>
       </div>
     </div>
   </div>
 </section>
+
 <!-- Translate Section -->
 <section class="#translate" id="translate">
   <div class="container">
     <div class="columns is-centered is-vcentered">
       <div class="column is-4">
-        <h1 class="title">Translate</h1>
+        <h1 class="title is-centered" >Translate</h1>
 
         <form id="translationForm">
           <div class="field">
@@ -199,8 +236,8 @@
 <!-- Team Section -->
 <section class="section" id="team">
   <div class="container">
-    <h3 class="title is-3 has-text-centered">THE TEAM</h3>
-    <p class="subtitle is-5 has-text-centered">The sole developer</p>
+    <h3 class="title is-3 has-text-centered">Team</h3>
+    <p class="subtitle is-5 has-text-centered"> - The sole developer - </p>
     <div class="columns is-centered">
       <div class="column is-one-third">
         <div class="card">
@@ -209,15 +246,19 @@
               <img src="assets/onyx.png" alt="Ons Hafi">
             </figure>
           </div>
-          <div class="card-content">
+          <div class="card-content has-text-centered">
             <div class="content">
-              <h3 class="title is-4 is-centered">Ons Hafi</h3>
-              <p class="subtitle is-6 is-centered">F/end & B/end</p>
-              <p>avadacadavra</p>
+              <h3 class="title is-4">Ons Hafi</h3>
+              <h4 class="subtitle is-6">- Software Engineering Student - </h4>
+              <p>TransL8R, the polyglot's Babel fish, is my inaugural journey into the realm of coding. Inspired by the book, it carries a nerdy touch that resonates with my passion for both front-end and back-end development.</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
 
       </div>
     </div>
@@ -228,7 +269,8 @@
 <section class="section is-light" id="contact">
   <div class="container">
     <h3 class="title is-3 has-text-centered">CONTACT</h3>
-    <p class="subtitle is-5 has-text-centered">Let's get in touch. Send us a message:</p>
+    <p> </p> 
+    <p class="subtitle is-5 has-text-centered">In the event of a glitchy feature or a pesky bug, or if you feel like dropping a review, don't hesitate to reach out! Let's synchronize our neural networks! Beam us a transmission.:</p>
     <div class="columns is-centered is-flex is-justify-content-center">
       <div class="column is-half">
         <form action="/action_page.php" target="_blank">
