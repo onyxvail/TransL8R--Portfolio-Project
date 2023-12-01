@@ -271,51 +271,63 @@
 <!-- Contact Section -->
 <section class="section is-light" id="contact">
   <div class="container">
-    <h3 class="title is-3 has-text-centered">CONTACT</h3>
-    <p> </p> 
-    <p class="subtitle is-5 has-text-centered">In the event of a glitchy feature or a pesky bug, or if you feel like dropping a review, don't hesitate to reach out! Let's synchronize our neural networks! Beam us a transmission.:</p>
-    <div class="columns is-centered is-flex is-justify-content-center">
-      <div class="column is-half">
-        <form action="/action_page.php" target="_blank">
-          <div class="field">
-            <label class="label">Name</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Name" required name="Name">
-            </div>
+      <h3 class="title is-3 has-text-centered">CONTACT</h3>
+      <p class="subtitle is-5 has-text-centered">In the event of a glitchy feature or a pesky bug, or if you feel like dropping a review, don't hesitate to reach out! Let's synchronize our neural networks! Beam us a transmission.:</p>
+      <div class="columns is-centered is-flex is-justify-content-center">
+          <div class="column is-half">
+              <form action="/submit_contact" method="post">
+                  <div class="field">
+                      <label class="label">First Name</label>
+                      <div class="control">
+                          <input class="input" type="text" placeholder="Your first name.." name="firstname" required>
+                      </div>
+                  </div>
+                  <div class="field">
+                      <label class="label">Last Name</label>
+                      <div class="control">
+                          <input class="input" type="text" placeholder="Your last name.." name="lastname" required>
+                      </div>
+                  </div>
+                  <div class="field">
+                      <label class="label">Country</label>
+                      <div class="control">
+                          <div class="select">
+                              <select name="country" required>
+                                  <option value="australia">Australia</option>
+                                  <option value="canada">Canada</option>
+                                  <option value="usa">USA</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="field">
+                      <label class="label">Subject</label>
+                      <div class="control">
+                          <textarea class="textarea" placeholder="Write something.." name="subject" required></textarea>
+                      </div>
+                  </div>
+                  <div class="field">
+                      <div class="control">
+                          <button class="button is-black" type="submit">
+                              <i class="fa fa-paper-plane"></i> SUBMIT
+                          </button>
+                      </div>
+                  </div>
+              </form>
           </div>
-          <div class="field">
-            <label class="label">Email</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Email" required name="Email">
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Subject</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Subject" required name="Subject">
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Message</label>
-            <div class="control">
-              <textarea class="textarea" placeholder="Message" required name="Message"></textarea>
-            </div>
-          </div>
-          <div class="field">
-            <div class="control">
-              <button class="button is-black" type="submit">
-                <i class="fa fa-paper-plane"></i> SEND MESSAGE
-              </button>
-            </div>
-          </div>
-        </form>
       </div>
-    </div>
-    
   </div>
 </section>
-  </div>
-</section>
+
+<script>
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  function toggleNavbar() {
+      var navbarBurger = document.querySelector('.navbar-burger');
+      var navbarMenu = document.querySelector('.navbar-menu');
+      navbarBurger.classList.toggle('is-active');
+      navbarMenu.classList.toggle('is-active');
+  }
+</script>
 
 
 <script>
@@ -327,6 +339,27 @@
     navbarMenu.classList.toggle('is-active');
   }
 </script>
+<!-- Scroll-up button -->
+<button id="scrollUpBtn" class="button is-primary" onclick="scrollToTop()">Scroll Up</button>
+
+<script>
+  window.onscroll = function() { scrollFunction() };
+
+  function scrollFunction() {
+    var scrollUpBtn = document.getElementById("scrollUpBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollUpBtn.style.display = "block";
+    } else {
+      scrollUpBtn.style.display = "none";
+    }
+  }
+
+  function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
 
 </body>
 </html>
