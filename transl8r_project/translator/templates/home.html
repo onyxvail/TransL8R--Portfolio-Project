@@ -72,9 +72,11 @@
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   inset: 0 0 0 0;
-  background: hsl(200 100% 80%);
   z-index: -1;
   transition: transform .3s ease;
+  background-color: #F05941;
+  border: none;
+  color: black;
 }
 
 .learn-more-button {
@@ -237,7 +239,7 @@
 
 
 <!-- Team Section -->
-<section class="section" id="team">
+<section class="section team-section" id="team">
   <div class="container">
     <h3 class="title is-3 has-text-centered">Team</h3>
     <p class="subtitle is-5 has-text-centered"> - The sole developer - </p>
@@ -246,14 +248,22 @@
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="assets/onyx.png" alt="Ons Hafi">
+              <img src="assets/onyx.png" alt="Ons Hafi" class="team-member-image">
             </figure>
           </div>
           <div class="card-content has-text-centered">
             <div class="content">
-              <h3 class="title is-4">Ons Hafi</h3>
-              <h4 class="subtitle is-6">- Software Engineering Student - </h4>
+              <h1 class="title is-4 team-member-title">Ons Hafi</h1>
+              <p class="subtitle is-6 team-member-title">Software Engineering Student</p>
               <p>TransL8R, the polyglot's Babel fish, is my inaugural journey into the realm of coding. Inspired by the book, it carries a nerdy touch that resonates with my passion for both front-end and back-end development.</p>
+              <p style="margin: 24px 0;"> 
+                <a href="https://twitter.com/AzgedaSeya"><i class="fa fa-twitter"></i></a>  
+                <a href="https://www.linkedin.com/in/onshafi/"><i class="fa fa-linkedin"></i></a>  
+                <a href="https://www.facebook.com/ONYXVAIL/"><i class="fa fa-facebook"></i></a> 
+              </p>
+              <button class="button is-black" style="width: 100%;">
+                <i class="fa fa-paper-plane"></i> Contact
+              </button>
             </div>
           </div>
         </div>
@@ -261,6 +271,7 @@
     </div>
   </div>
 </section>
+
 
 
       </div>
@@ -293,9 +304,11 @@
                       <div class="control">
                           <div class="select">
                               <select name="country" required>
-                                  <option value="australia">Australia</option>
-                                  <option value="canada">Canada</option>
+                                  <option value="Palestine">Palestine</option>
+                                  <option value="Tunisia">Tunisia</option>
                                   <option value="usa">USA</option>
+                                  <option value="Nigeria">Nigeria</option>
+
                               </select>
                           </div>
                       </div>
@@ -340,7 +353,8 @@
   }
 </script>
 <!-- Scroll-up button -->
-<button id="scrollUpBtn" class="button is-primary" onclick="scrollToTop()">Scroll Up</button>
+<button id="scrollUpBtn" class="button is-primary btn" onclick="scrollToTop()">Scroll Up</button>
+
 
 <script>
   window.onscroll = function() { scrollFunction() };
