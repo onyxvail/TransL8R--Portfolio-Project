@@ -76,7 +76,7 @@
   transition: transform .3s ease;
   background-color: #F05941;
   border: none;
-  color: black;
+  color: #91a5b8;
 }
 
 .learn-more-button {
@@ -84,8 +84,26 @@
   font-size: 1.5rem;
   text-decoration: none;
 }
+.button.is-primary {
+    background-color: #91a5b8;
+    border-color: transparent;
+    color: #fff;
+}
 
-
+.button {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    color: #91a5b8;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+    white-space: nowrap;
+}
 
 /* Style the footer */
 footer {
@@ -129,7 +147,7 @@ footer {
     <a href="#contact" onclick="toggleNavbar()" class="navbar-item">CONTACT</a>
   </div>
 </nav>
-
+<hr> </hr>
 <!-- Header with full-height image -->
 <header class="hero is-fullheight-with-navbar is-primary is-bold" style="background-image: url(assets/background.png)";>
   <div class="hero-body">
@@ -145,17 +163,16 @@ footer {
     </div>
   </div>
 </header>
+<hr> </hr>
 <!-- About Section -->
 <section class="section" id="about">
   <div class="container">
     <h3 class="title is-3 has-text-centered">About TransL8R :</h3>
     <h1>               </h1>
-    <h2 class="subtitle is-5 has-text-centered mb-5">The story behind the name</h2>
-
+    <h2 class="subtitle is-5 is-bold has-shadow has-text-centered mb-5">- The story behind the name - </h2>
     <!-- Story Paragraph -->
     <div class="columns is-centered">
       <div class="column is-half">
-        <i class="fa fa-book is-size-1 has-text-centered"></i>
         <p class="has-text-centered mt-4">
           Embracing the whimsical charm of Douglas Adams' "The Hitchhiker's Guide to the Galaxy," TransL8R proudly adopts the title of the polyglot's Babel Fish. In this delightful nod to the literary realm, TransL8R transforms the mundane act of translation into a nerdy and playful adventure. The Babel Fish, a fictional creature from Adams' masterpiece, possesses the extraordinary ability to instantly translate any language in the universe. Similarly, TransL8R, with its witty play on words, becomes the go-to linguistic companion for users navigating the diverse expanse of languages. The inclusion of this nerdy touch on the website not only pays homage to a beloved sci-fi classic but also adds a delightful twist to the serious business of language translation. It's a nerdy badge of honor, inviting users to embark on a linguistic journey with a touch of literary flair.
         </p>
@@ -163,7 +180,7 @@ footer {
     </div>
   </div>
 </section>
-
+<hr> </hr>
 <!-- Translate Section -->
 <section class="#translate" id="translate">
   <div class="container">
@@ -175,9 +192,17 @@ footer {
           <div class="field">
             <label class="label">Source Language</label>
             <select class="input" id="sourceLanguage">
-              <option value="en">English</option>
               <option value="es">Spanish</option>
               <option value="fr">French</option>
+              <option value="en">English</option>
+              <option value="ar">Arabic</option>
+              <option value="zh">chinese</option>
+              <option value="no">Norwegian</option>
+              <option value="de">German</option>
+              <option value="it">Italian</option>
+              <option value="ja">Japanese</option>
+              <option value="ko">Korean</option>
+              <option value="pt">Portuguese</option>
             </select>
           </div>
 
@@ -195,12 +220,6 @@ footer {
               <option value="ja">Japanese</option>
               <option value="ko">Korean</option>
               <option value="pt">Portuguese</option>
-              <!-- fictional languages -->
-              <option value="klingon">Klingon</option>
-              <option value="elvish">Elvish</option>
-              <option value="dothraki">Dothraki</option>
-              <option value="huttese">Huttese</option>
-              <option value="valyrian">Valyrian</option>
             </select>
           </div>
 
@@ -214,7 +233,7 @@ footer {
             <textarea class="textarea" id="translatedText" placeholder="Translation result"></textarea>
           </div>
 
-          <button class="button is-primary" type="button" onclick="translateText()">Translate</button>
+          <button class="button is-primary " type="button" onclick="translateText()">Translate</button>
         </form>
       </div>
     </div>
@@ -255,10 +274,7 @@ footer {
   }
 </script>
 
-
-
-
-
+<hr> </hr>
 <!-- Team Section -->
 <section class="section team-section" id="team">
   <div class="container">
@@ -276,10 +292,11 @@ footer {
             <div class="content">
               <h1 class="title is-4 team-member-title">Ons Hafi</h1>
               <p class="subtitle is-6 team-member-title">Software Engineering Student</p>
-              <p>TransL8R, the polyglot's Babel fish, is my inaugural journey into the realm of coding. Inspired by the book, it carries a nerdy touch that resonates with my passion for both front-end and back-end development.</p>
-              <p style="margin: 24px 0;"> 
+              <p>TransL8R, the polyglot's Babel fish, is my inaugural journey into the realm of coding. 
+                Inspired by the book, it carries a nerdy touch that resonates with my passion for both front-end and back-end development.</p>
+              <p style="margin: 20px 0;"> 
                 <a href="https://twitter.com/AzgedaSeya"><i class="fa fa-twitter"></i></a>  
-                <a href="https://www.linkedin.com/in/onshafi/"><i class="fa fa-linkedin"></i></a>  
+                <a href="https://www.linkedin.com/in/onshafi/"><i class="fa fa-linkedin"></i></a> 
                 <a href="https://github.com/onyxvail/TransL8R--Portfolio-Project"><i class="fa fa-github"></i></a> 
 
               </p>
@@ -300,59 +317,66 @@ footer {
     </div>
   </div>
 </section>
-
+<hr> </hr>
 <!-- Contact Section -->
 <section class="section is-light" id="contact">
   <div class="container">
-      <h3 class="title is-3 has-text-centered">CONTACT</h3>
-      <p class="subtitle is-5 has-text-centered">In the event of a glitchy feature or a pesky bug, or if you feel like dropping a review, don't hesitate to reach out! Let's synchronize our neural networks! Beam us a transmission.:</p>
-      <div class="columns is-centered is-flex is-justify-content-center">
-          <div class="column is-half">
-              <form action="/submit_contact" method="post">
-                  <div class="field">
-                      <label class="label">First Name</label>
-                      <div class="control">
-                          <input class="input" type="text" placeholder="Your first name.." name="firstname" required>
-                      </div>
-                  </div>
-                  <div class="field">
-                      <label class="label">Last Name</label>
-                      <div class="control">
-                          <input class="input" type="text" placeholder="Your last name.." name="lastname" required>
-                      </div>
-                  </div>
-                  <div class="field">
-                      <label class="label">Country</label>
-                      <div class="control">
-                          <div class="select">
-                              <select name="country" required>
-                                  <option value="Palestine">Palestine</option>
-                                  <option value="Tunisia">Tunisia</option>
-                                  <option value="usa">USA</option>
-                                  <option value="Nigeria">Nigeria</option>
-
-                              </select>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="field">
-                      <label class="label">Subject</label>
-                      <div class="control">
-                          <textarea class="textarea" placeholder="Write something.." name="subject" required></textarea>
-                      </div>
-                  </div>
-                  <div class="field">
-                      <div class="control">
-                          <button class="button is-black" type="submit">
-                              <i class="fa fa-paper-plane"></i> SUBMIT
-                          </button>
-                      </div>
-                  </div>
-              </form>
+    <h3 class="title is-3 has-text-centered">CONTACT</h3>
+    <p class="subtitle is-5 has-text-centered">In the event of a glitchy feature or a pesky bug, or if you feel like dropping a review,
+      don't hesitate to reach out! Let's synchronize our neural networks! Beam us a transmission.</p>
+    <div class="columns is-centered is-flex is-justify-content-center">
+      <div class="column is-half">
+        <form action="http://localhost:36139/home.html" method="post">
+          <div class="field">
+            <label class="label">First Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Your first name.." name="firstname" required>
+            </div>
           </div>
+          <div class="field">
+            <label class="label">Last Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Your last name.." name="lastname" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="email" placeholder="Your email address.." name="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Country</label>
+            <div class="control">
+              <div class="select">
+                <select name="country" required>
+                  <option value="Palestine">Palestine</option>
+                  <option value="Tunisia">Tunisia</option>
+                  <option value="usa">USA</option>
+                  <option value="Nigeria">Nigeria</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Subject</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Write something.." name="subject" required></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-black" type="submit">
+                <i class="fa fa-paper-plane"></i> SUBMIT
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
+    </div>
   </div>
 </section>
+
 
 <script>
   // Toggle between showing and hiding the sidebar when clicking the menu icon
@@ -374,8 +398,9 @@ footer {
     navbarMenu.classList.toggle('is-active');
   }
 </script>
+<hr> </hr>
 <!-- Scroll-up button -->
-<button id="scrollUpBtn" class="button is-primary btn" onclick="scrollToTop()">Scroll Up</button>
+<button id="scrollUpBtn" class="button is-primary btn has-shadow"onclick="scrollToTop()">Scroll Up</button>
 
 
 <script>
@@ -397,7 +422,7 @@ footer {
 </script>
 
 <footer>
-  <p>Footer</p>
+  <p>Alx SE - Holberton</p>
 </footer> 
 
 </body>
