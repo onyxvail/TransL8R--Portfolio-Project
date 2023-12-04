@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load static %}
   <title>TransL8r</title>
     <!-- Favicon -->
     <link rel="icon" href="% static 'assets/icon.gif' %" type="image/x-icon">
@@ -285,7 +286,7 @@ footer {
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="% static 'assets/onyx.png' %" alt="Ons Hafi" class="team-member-image">
+              <img src="{% static 'assets/onyx.png' %}" alt="Ons Hafi" class="team-member-image">
             </figure>
           </div>
           <div class="card-content has-text-centered">

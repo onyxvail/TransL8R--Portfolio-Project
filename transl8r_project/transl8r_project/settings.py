@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'translator',
+
 ]
 
 MIDDLEWARE = [
@@ -106,11 +107,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+#STATIC_ROOT = BASE_DIR / "static"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add your Google Cloud API key
-GOOGLE_TRANSLATE_API_KEY = 'YOUR_GOOGLE_API_KEY'
+#GOOGLE_TRANSLATE_API_KEY = 'YOUR_GOOGLE_API_KEY'
