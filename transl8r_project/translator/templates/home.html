@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   {% load static %}
   <title>TransL8r</title>
     <!-- Favicon -->
-    <link rel="icon" href="% static 'assets/icon.gif' %" type="image/x-icon">
-    <link rel="shortcut icon" href="% static 'assets/icon.gif' %" type="image/x-icon">
+    <link rel="icon" href="{% static "icon.gif"%}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static "icon.gif"%}" type="image/x-icon">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +26,6 @@
     .bgimg-1 {
       background-position: center;
       background-size: cover;
-      background-image: url("assets/background.jpg");
       background-repeat: no-repeat;
     }
 
@@ -49,11 +49,10 @@
     }
 
     .navbar-brand {
-    background-image: url(assets/TransL8R\ logo.png);
     background-position: center;
-    background-size: 30vh;
-    width:95px;
-    height: 85px;
+    background-size: 20vh;
+    width:105px;
+    height: 80px;
     background-clip: unset;
     }
 
@@ -90,6 +89,31 @@
     border-color: transparent;
     color: #fff;
 }
+.translation-box{
+  display:flex;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+}
+.textarea{
+  display: flex;
+  width: 250px;
+  {% comment %} margin-left: -20px; {% endcomment %}
+  {% comment %} margin-right: 30px; {% endcomment %}
+  padding: 20px;
+}
+#inputText{
+  margin-left: -35px;
+
+}
+#translatedText{
+  margin-right: -35px;
+
+}
+#translate-btn{
+  margin-left: 150px;
+  width: 30%;
+}
 
 .button {
     background-color: #fff;
@@ -105,7 +129,9 @@
     text-align: center;
     white-space: nowrap;
 }
-
+#scrollUpBtn {
+  margin-left: 1220px;
+}
 /* Style the footer */
 footer {
   background-color: #F05941;
@@ -121,7 +147,7 @@ footer {
 
 <!-- Navbar (sit on top) -->
 <nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
+  <div class="navbar-brand" style="background-image: url('{% static "TransL8R logo.png"%}')";>
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar" onclick="toggleNavbar()">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -150,7 +176,7 @@ footer {
 </nav>
 <hr> </hr>
 <!-- Header with full-height image -->
-<header class="hero is-fullheight-with-navbar is-primary is-bold" style="background-image: url(% static 'assets/background.png;' %)";>
+<header class="hero is-fullheight-with-navbar is-primary is-bold" style="background-image: url('{% static "background.png"%}')">
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title is-1 is-size-3-mobile" style="color: #22092C;">
@@ -223,7 +249,7 @@ footer {
               <option value="pt">Portuguese</option>
             </select>
           </div>
-
+          <div class="translation-box">
           <div class="field">
             <label class="label">Input Text</label>
             <textarea class="textarea" id="inputText" placeholder="Enter text to translate"></textarea>
@@ -233,8 +259,9 @@ footer {
             <label class="label">Translated Text</label>
             <textarea class="textarea" id="translatedText" placeholder="Translation result"></textarea>
           </div>
+          </div>
 
-          <button class="button is-primary " type="button" onclick="translateText()">Translate</button>
+          <button class="button is-primary" id="translate-btn"type="button" onclick="translateText()">Translate</button>
         </form>
       </div>
     </div>
@@ -286,7 +313,7 @@ footer {
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="{% static 'assets/onyx.png' %}" alt="Ons Hafi" class="team-member-image">
+              <img src="{% static 'onyx.png' %}" alt="Ons Hafi" class="team-member-image">
             </figure>
           </div>
           <div class="card-content has-text-centered">
@@ -296,10 +323,9 @@ footer {
               <p>TransL8R, the polyglot's Babel fish, is my inaugural journey into the realm of coding. 
                 Inspired by the book, it carries a nerdy touch that resonates with my passion for both front-end and back-end development.</p>
               <p style="margin: 20px 0;"> 
-                <a href="https://twitter.com/AzgedaSeya"><i class="fa fa-twitter"></i></a>  
-                <a href="https://www.linkedin.com/in/onshafi/"><i class="fa fa-linkedin"></i></a> 
-                <a href="https://github.com/onyxvail/TransL8R--Portfolio-Project"><i class="fa fa-github"></i></a> 
-
+                <a  style="margin: 10px;" href="https://twitter.com/AzgedaSeya"><i class="fa fa-twitter"></i></a>  
+                <a  style="margin: 10px;" href="https://www.linkedin.com/in/onshafi/"><i class="fa fa-linkedin"></i></a> 
+                <a  style="margin: 10px;" href="https://github.com/onyxvail/TransL8R--Portfolio-Project"><i class="fa fa-github"></i></a> 
               </p>
               <button class="button is-black" style="width: 100%;">
                 <i class="fa fa-paper-plane"></i> Contact
@@ -378,7 +404,6 @@ footer {
     </div>
   </div>
 </section>
-
 
 <script>
   // Toggle between showing and hiding the sidebar when clicking the menu icon
