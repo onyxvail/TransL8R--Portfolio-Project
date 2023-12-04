@@ -3,8 +3,8 @@
 <head>
   <title>TransL8r</title>
     <!-- Favicon -->
-    <link rel="icon" href="assets/icon.gif" type="image/x-icon">
-    <link rel="shortcut icon" href="assets/icon.gif" type="image/x-icon">
+    <link rel="icon" href="% static 'assets/icon.gif' %" type="image/x-icon">
+    <link rel="shortcut icon" href="% static 'assets/icon.gif' %" type="image/x-icon">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -149,7 +149,7 @@ footer {
 </nav>
 <hr> </hr>
 <!-- Header with full-height image -->
-<header class="hero is-fullheight-with-navbar is-primary is-bold" style="background-image: url(assets/background.png)";>
+<header class="hero is-fullheight-with-navbar is-primary is-bold" style="background-image: url(% static 'assets/background.png;' %)";>
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title is-1 is-size-3-mobile" style="color: #22092C;">
@@ -285,7 +285,7 @@ footer {
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="assets/onyx.png" alt="Ons Hafi" class="team-member-image">
+              <img src="% static 'assets/onyx.png' %" alt="Ons Hafi" class="team-member-image">
             </figure>
           </div>
           <div class="card-content has-text-centered">
@@ -326,7 +326,8 @@ footer {
       don't hesitate to reach out! Let's synchronize our neural networks! Beam us a transmission.</p>
     <div class="columns is-centered is-flex is-justify-content-center">
       <div class="column is-half">
-        <form action="http://localhost:36139/home.html" method="post">
+        <form action="" method="post" >
+          {% csrf_token %}
           <div class="field">
             <label class="label">First Name</label>
             <div class="control">
