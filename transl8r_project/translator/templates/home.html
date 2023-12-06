@@ -140,7 +140,17 @@ footer {
   color: white;
 }
 
-
+/*music*/
+.hero.is-primary {
+    background-color:#91a5b8;
+}
+.button.is-danger {
+    background-color: #F05941;
+    border-width: 1px;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+}
   </style>
 </head>
 <body>
@@ -208,6 +218,75 @@ footer {
   </div>
 </section>
 <hr> </hr>
+<!-- music Section -->
+<section class="hero is-primary is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-three-quarters">
+          <h1 class="title is-3">Elevate your senses during this experience </h1>
+          <h2 class="subtitle is-5">Join the Babel fish's journey via this song </h2>
+          <div class="buttons">
+            <a class="button is-danger is-medium play-button is-centered" onclick="toggleMusic()">
+              <span class="icon">
+                <i class="fa fa-spinner fa-pulse fa-lg fa-fw "></i>
+                <span class="sr-only">Loading...</span>
+  
+              <span>Play</span>
+            </a>
+            <a class="button is-danger is-medium pause-button is-hidden" onclick="toggleMusic()">
+              <span class="icon">
+                <i class="fa fa-spinner fa-pulse fa-lg fa-fw "></i>
+                <span class="sr-only">Loading...</span>
+              </span>
+              <span>Pause</span>
+            </a>
+          </div>
+        </div>
+        <div class="column">
+          <div id="playButton" class="play-button" onclick="toggleMusic()">
+         
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let audio = null;
+
+  function toggleMusic() {
+    if (audio && !audio.paused) {
+      // If music is playing, pause it
+      audio.pause();
+      showPlayButton();
+    } else {
+      // If music is paused or not started, play it
+      if (!audio) {
+        // Create audio element if not already created
+        const audioSource = '{% static "My Jolly Sailor Bold - Ashley Serena.mp3"%}';
+        audio = new Audio(audioSource);
+        audio.addEventListener('ended', showPlayButton);
+      }
+      audio.play();
+      showPauseButton();
+    }
+  }
+
+  function showPlayButton() {
+    document.querySelector('.play-button').classList.remove('is-hidden');
+    document.querySelector('.pause-button').classList.add('is-hidden');
+  }
+
+  function showPauseButton() {
+    document.querySelector('.play-button').classList.add('is-hidden');
+    document.querySelector('.pause-button').classList.remove('is-hidden');
+  }
+</script>
+
+<hr> </hr>
+
 <!-- Translate Section -->
 <section class="#translate" id="translate">
   <div class="container">
@@ -449,7 +528,17 @@ footer {
 </script>
 
 <footer>
-  <p>Alx SE - Holberton</p>
+  <!-- new -->
+   <a href="https://www.alxafrica.com/blog/software-engineering-hard-vs-soft-skills/" class="has-text-primary">Alx-SE & </a>
+   <a href="https://www.holbertonschool.com" class="has-text-primary">Holberton</a>
+  <p class="rights">
+    <span>&copy;&nbsp;</span>
+    <span class="copyright-year"></span>
+    <span>TransL8R-The Polyglot's Babel Fish </span>. All Rights Reserved. Developed by
+    <a href="https://www.linkedin.com/in/onshafi/" class="has-text-primary">Ons Hafi</a>
+  </p>
+  
+
 </footer> 
 
 </body>
