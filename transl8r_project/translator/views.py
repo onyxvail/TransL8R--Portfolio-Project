@@ -17,7 +17,7 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.http import HttpResponse
-# create the views here
+# all the views are here
 def home(request):
     if request.method == 'POST':
         contact = Contact()
